@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Isra AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 40px; }
+    .chat-box { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .chat-title { font-size: 24px; margin-bottom: 20px; text-align: center; color: #555; }
+    .messages { height: 300px; overflow-y: scroll; border: 1px solid #ddd; padding: 10px; border-radius: 5px; margin-bottom: 10px; background: #fafafa; }
+    .input-group { display: flex; gap: 10px; }
+    input[type="text"] { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    button { padding: 10px 20px; background: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <div class="chat-title">Isra AI - Baat Karein</div>
+    <div class="messages" id="messages"></div>
+    <div class="input-group">
+      <input type="text" id="userInput" placeholder="Aapka sawal yahan likhein..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script>
+    const messages = document.getElementById("messages");
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const text = input.value.trim();
+      if (!text) return;
+      messages.innerHTML += `<div><strong>You:</strong> ${text}</div>`;
+      messages.innerHTML += `<div><strong>Isra:</strong> Soch rahi hoon... jawab aayega future me!</div>`;
+      input.value = "";
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
+</body>
+</html>
